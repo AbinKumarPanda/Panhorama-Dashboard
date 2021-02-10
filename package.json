@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "request": "^2.81.0",
+    "webflow-api": "^0.5.0"
+  }
+}
