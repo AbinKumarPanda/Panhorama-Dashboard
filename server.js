@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
 // })
 
 
-
+    res.end();
 })
 
 app.listen(PORT, () => {
