@@ -76,9 +76,12 @@ app.get('/', (req, res) => {
 // })
 
 
-    res.end();
+    res.end(res);
 })
 
 app.listen(PORT, () => {
     console.log(`Example app listening at port:${PORT}`)
 })
+app.on('clientError', function(err) {
+    console.log('ERROR', err);
+});
