@@ -21,7 +21,7 @@
     "url": "https://github.com/RobotMermaid/WebflowSpaceApi/issues"
   },
   "homepage": "https://github.com/RobotMermaid/WebflowSpaceApi#readme",
-  "description": "",
+  "description": "A minimal app that collects the spacecrafts listed on https://spacelaunchnow.me and writes them to a webflow collection. ",
   "devDependencies": {
     "nodemon": "^2.0.7"
   }
