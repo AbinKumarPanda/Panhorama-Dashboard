@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
 // })
 
 
-    res.end('<a href="RobotMermaid.com">Hi</a>');
+    res.end('<a href="https://www.robotmermaid.com/">Hi</a>');
 })
 
 app.listen(PORT, () => {
