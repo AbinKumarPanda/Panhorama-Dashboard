@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-// const port = 3000
+const PORT = process.env.PORT || 3000;
 
 const Webflow = require('webflow-api')
 require('isomorphic-fetch');
@@ -10,7 +10,7 @@ let siteId = '600b1f4c2115e03205c5abf6';
 let collectionId = '600f09e9ae7a0d0dbb875d89';
 let ids = {};
 
-app.get('/hello', (req, res) => {
+app.get('/', (req, res) => {
     // res.json({key:"value"});
     fetch('https://spacelaunchnow.me/api/3.5.0/config/spacecraft/?limit=200')
         .then(function(response) {
