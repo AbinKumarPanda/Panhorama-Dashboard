@@ -10,7 +10,7 @@
   },
   "name": "spaceproject",
   "version": "1.0.0",
-  "main": "SpaceCrafts.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RobotMermaid/WebflowSpaceApi.git"
