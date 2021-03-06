@@ -74,9 +74,12 @@ app.get('/', (req, res) => {
         .then(function() {
             api.publishSite({ siteId: siteId, domains: [domains] });
         })
+        .then(function() {
+            res.end('<a href="https://www.robotmermaid.com/">Hi</a>');
+        })
 
 
-    res.end('<a href="https://www.robotmermaid.com/">Hi</a>');
+
 })
 
 app.listen(PORT, () => {
@@ -85,3 +88,4 @@ app.listen(PORT, () => {
 app.on('clientError', function(err) {
     console.log('ERROR', err);
 });
+
