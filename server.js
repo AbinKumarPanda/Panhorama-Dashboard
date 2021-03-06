@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const PORT = process.env.PORT || 3000;
 
 const Webflow = require('webflow-api')
@@ -10,6 +11,8 @@ let domains = 'ondines-space-project-b7af6c657a1f9e414.webflow.io'
 let siteId = '600b1f4c2115e03205c5abf6';
 let collectionId = '600f09e9ae7a0d0dbb875d89';
 let ids = {};
+
+app.use(cors())
 
 app.get('/', (req, res) => {
     // res.json({key:"value"});
