@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const Webflow = require('webflow-api')
 require('isomorphic-fetch');
 
-const api = new Webflow({ token: 'eb26dc01a9366ade490b6c589b742109484afdee5262ffa3c8970b5694430096' })
+const api = new Webflow({ token: process.env.TOKEN })
 let domains = 'ondines-space-project-b7af6c657a1f9e414.webflow.io'
 let siteId = '600b1f4c2115e03205c5abf6';
 let collectionId = '600f09e9ae7a0d0dbb875d89';
