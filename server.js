@@ -50,7 +50,16 @@ app.get('/', (req, res) => {
                                     'maiden-flight': rocket.maiden_flight,
                                     'human-rated': rocket.human_rated.toString(),
                                     'crew-capacity-2': rocket.crew_capacity,
+                                    'image_url': rocket.image_url,
                                     'in-use': rocket.in_use.toString(),
+                                    'agency-name': rocket.agency.name,
+                                    'abbrev': rocket.agency.abbrev,
+                                    'agency-type': rocket.agency.type,
+                                    'agency-description': rocket.agency.description,
+                                    'agency-admin': rocket.agency.administrator,
+                                    'agency-founding-year': rocket.agency.founding_year,
+                                    'agency-launchers': rocket.agency.launchers,
+                                    'country': rocket.agency.country_code,
                                 },
                             });
                             delete ids[rocket.id];
@@ -66,8 +75,16 @@ app.get('/', (req, res) => {
                                     'maiden-flight': rocket.maiden_flight,
                                     'human-rated': rocket.human_rated.toString(),
                                     'crew-capacity-2': rocket.crew_capacity,
+                                    'image_url': rocket.image_url,
                                     'in-use': rocket.in_use.toString(),
-
+                                    'agency-name': rocket.agency.name,
+                                    'abbrev': rocket.agency.abbrev,
+                                    'agency-type': rocket.agency.type,
+                                    'agency-description': rocket.agency.description,
+                                    'agency-admin': rocket.agency.administrator,
+                                    'agency-founding-year': rocket.agency.founding_year,
+                                    'agency-launchers': rocket.agency.launchers,
+                                    'country': rocket.agency.country_code,
                                 }
                             })
                         }
@@ -86,7 +103,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Example app listening at port:${PORT}`)
+    console.log(`App listening at port:${PORT}`)
 })
 app.on('clientError', function(err) {
     console.log('ERROR', err);
