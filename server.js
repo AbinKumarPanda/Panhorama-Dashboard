@@ -17,7 +17,7 @@ let ids = {};
 app.use(cors());
 
 app.get('/', (req, res) => {
-    // res.json({key:"value"});
+    // calls the endpoint to get JSON response
     fetch('https://spacelaunchnow.me/api/3.5.0/config/spacecraft/?limit=200')
         .then(function(response) {
             if (response.status >= 400) {
@@ -26,16 +26,16 @@ app.get('/', (req, res) => {
             return response.json();
         })
         .then(function(rockets) {
+            // calls Webdflow api to get collection items
             api.items({collectionId: collectionId})
                 .then((info) => {
+                    //collects the item ids
                     info.items.forEach(i => {
                         ids[i["rocket-id"]] = i._id;
                     });
-
-                    console.log("IDS: ", ids);
-                    // console.log("rockets: ", rockets);
+                    // console.log("IDS: ", ids);
+                    // loops thru the response from spacelaunchnow and sets up the data for the CMS
                     rockets.results.forEach( rocket => {
-                        console.log(rocket.id, ids[rocket.id]);
                         let  fields = {
                             'name': rocket.name,
                             '_archived': false,
@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
                             'country-2': rocket.agency.country_code,
                         }
                         if (ids[rocket.id]) {
-                            console.log("IN HERE::", rocket.id, ids[rocket.id])
+                            // adds data to existing collection items
                             api.patchItem({
                                 collectionId: collectionId,
                                 itemId: ids[rocket.id],
@@ -65,6 +65,7 @@ app.get('/', (req, res) => {
                             });
                             delete ids[rocket.id];
                         } else {
+                            // creates new items
                             api.createItem({
                                 collectionId: collectionId,
                                 fields: fields
@@ -79,9 +80,6 @@ app.get('/', (req, res) => {
         .then(function() {
             res.end('<a href="https://www.robotmermaid.com/">Hi</a>');
         })
-
-
-
 })
 
 app.listen(PORT, () => {
