@@ -81,7 +81,7 @@ app.get('/', (req, res) => {
             res.end('<a href="https://www.robotmermaid.com/">Hi</a>');
         })
 })
-
+// server listening for requests
 app.listen(PORT, () => {
     console.log(`App listening at port:${PORT}`)
 })
